@@ -1,472 +1,588 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8" />
-
-<style id="webmakerstyle">
-
-</style>
-</head>
-<body>
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KTM EduTech - Interactive Resource Generation Guide</title>
     <style>
-        :root {
-            --primary: #4f46e5;
-            --primary-hover: #4338ca;
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --success: #10b981;
-        }
+      :root {
+          --primary: #4f46e5;
+          --primary-hover: #4338ca;
+          --bg-color: #f8fafc;
+          --card-bg: #ffffff;
+          --text-main: #1e293b;
+          --text-muted: #64748b;
+          --border: #e2e8f0;
+          --success: #10b981;
+      }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
+      * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 2rem 1rem;
-        }
+      body {
+          background-color: var(--bg-color);
+          color: var(--text-main);
+          line-height: 1.6;
+          padding: 2rem 1rem;
+      }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+      .container {
+          max-width: 800px;
+          margin: 0 auto;
+      }
 
-        header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
+      header {
+          text-align: center;
+          margin-bottom: 2.5rem;
+      }
 
-        .logo-img {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            margin-bottom: 0.75rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
+      .logo-img {
+          width: 80px;
+          height: 80px;
+          object-fit: contain;
+          margin-bottom: 0.75rem;
+          border-radius: 12px;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      }
 
-        header h1 {
-            font-size: 2.25rem;
-            color: var(--primary);
-            margin-bottom: 0.25rem;
-        }
+      header h1 {
+          font-size: 2.25rem;
+          color: var(--primary);
+          margin-bottom: 0.25rem;
+      }
 
-        header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
+      header p {
+          color: var(--text-muted);
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+      }
 
-        .studio-link {
-            display: inline-block;
-            color: var(--primary);
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
+      .studio-link {
+          display: inline-block;
+          color: var(--primary);
+          font-weight: 600;
+          text-decoration: none;
+          font-size: 0.95rem;
+          transition: color 0.2s;
+      }
 
-        .studio-link:hover {
-            color: var(--primary-hover);
-            text-decoration: underline;
-        }
+      .studio-link:hover {
+          color: var(--primary-hover);
+          text-decoration: underline;
+      }
 
-        .steps-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
+      .steps-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          margin-bottom: 3rem;
+      }
 
-        .step-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            display: flex;
-            align-items: flex-start;
-            gap: 1.25rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
+      .step-card {
+          background: var(--card-bg);
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          padding: 1.5rem;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+          display: flex;
+          align-items: flex-start;
+          gap: 1.25rem;
+          transition: transform 0.2s, box-shadow 0.2s;
+      }
 
-        .step-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-        }
+      .step-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+      }
 
-        .step-number {
-            background: var(--primary);
-            color: white;
-            font-weight: bold;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 1.1rem;
-        }
+      .step-number {
+          background: var(--primary);
+          color: white;
+          font-weight: bold;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          font-size: 1.1rem;
+      }
 
-        .step-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-main);
-        }
+      .step-content h3 {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+          color: var(--text-main);
+      }
 
-        .step-content p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
+      .step-content p {
+          color: var(--text-muted);
+          font-size: 0.95rem;
+          margin-bottom: 1rem;
+      }
 
-        .action-btn {
-            background-color: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            padding: 0.5rem 1rem;
-            font-weight: 600;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+      .action-btn {
+          background-color: transparent;
+          color: var(--primary);
+          border: 2px solid var(--primary);
+          padding: 0.5rem 1rem;
+          font-weight: 600;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: all 0.2s;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+      }
 
-        .action-btn:hover {
-            background-color: var(--primary);
-            color: white;
-        }
+      .action-btn:hover {
+          background-color: var(--primary);
+          color: white;
+      }
 
-        /* Footer Branding */
-        footer {
-            text-align: center;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
+      /* Footer Branding */
+      footer {
+          text-align: center;
+          padding-top: 1rem;
+          border-top: 1px solid var(--border);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+      }
 
-        .footer-logo {
-            max-width: 150px;
-            height: auto;
-        }
+      .footer-logo {
+          max-width: 150px;
+          height: auto;
+      }
 
-        footer p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
+      footer p {
+          color: var(--text-muted);
+          font-size: 0.9rem;
+      }
 
-        /* Modal Styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            padding: 1rem;
-        }
+      /* Modal Styles */
+      .modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+          z-index: 1000;
+          padding: 1rem;
+      }
 
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
+      .modal-overlay.active {
+          opacity: 1;
+          visibility: visible;
+      }
 
-        .modal {
-            background: white;
-            width: 100%;
-            max-width: 520px;
-            border-radius: 12px;
-            padding: 2rem;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
+      .modal {
+          background: white;
+          width: 100%;
+          max-width: 520px;
+          border-radius: 12px;
+          padding: 2rem;
+          transform: scale(0.9);
+          transition: transform 0.3s ease;
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      }
 
-        .modal-overlay.active .modal {
-            transform: scale(1);
-        }
+      .modal-overlay.active .modal {
+          transform: scale(1);
+      }
 
-        .modal h2 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
+      .modal h2 {
+          color: var(--primary);
+          margin-bottom: 1rem;
+          font-size: 1.5rem;
+      }
 
-        .modal p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
+      .modal p {
+          color: var(--text-muted);
+          margin-bottom: 1.5rem;
+      }
 
-        .link-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
+      .link-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0.75rem;
+          margin-bottom: 1.5rem;
+      }
 
-        .link-grid-single {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
+      .link-grid-single {
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+          margin-bottom: 1.5rem;
+      }
 
-        .modal-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: flex-end;
-        }
+      .modal-actions {
+          display: flex;
+          gap: 1rem;
+          justify-content: flex-end;
+      }
 
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background 0.2s;
-            display: inline-block;
-            text-align: center;
-        }
+      .btn-primary {
+          background: var(--primary);
+          color: white;
+          border: none;
+          padding: 0.6rem 1.2rem;
+          border-radius: 6px;
+          font-weight: 600;
+          cursor: pointer;
+          text-decoration: none;
+          transition: background 0.2s;
+          display: inline-block;
+          text-align: center;
+      }
 
-        .btn-primary:hover {
-            background: var(--primary-hover);
-        }
+      .btn-primary:hover {
+          background: var(--primary-hover);
+      }
 
-        .btn-secondary {
-            background: var(--border);
-            color: var(--text-main);
-            border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-            text-decoration: none;
-            text-align: center;
-            display: inline-block;
-        }
+      .btn-secondary {
+          background: var(--border);
+          color: var(--text-main);
+          border: none;
+          padding: 0.6rem 1.2rem;
+          border-radius: 6px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s;
+          text-decoration: none;
+          text-align: center;
+          display: inline-block;
+      }
 
-        .btn-secondary:hover {
-            background: #cbd5e1;
-        }
+      .btn-secondary:hover {
+          background: #cbd5e1;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <img src="https://ik.imagekit.io/ktmedutech/KYDMASONG%20NET/Logo/KTM%20EduTech%20Square%20_6e7385(1).png?updatedAt=1779969331958" alt="KTM EduTech Logo" class="logo-img">
-            <h1>KTM EduTech</h1>
-            <p>Interactive Digital Resource Generation Guide</p>
-            <a href="https://wcs.ktmedu.dev/" target="_blank" class="studio-link">✨ Powered by KTM Web Creator Studio</a>
-        </header>
+      <header>
+        <img
+          src="https://ik.imagekit.io/ktmedutech/KYDMASONG%20NET/Logo/KTM%20EduTech%20Square%20_6e7385(1).png?updatedAt=1779969331958"
+          alt="KTM EduTech Logo"
+          class="logo-img"
+        />
+        <h1>KTM EduTech</h1>
+        <p>Interactive Digital Resource Generation Guide</p>
+        <a href="https://wcs.ktmedu.dev/" target="_blank" class="studio-link"
+          >✨ Powered by KTM Web Creator Studio</a
+        >
+      </header>
 
-        <div class="steps-wrapper">
-            <!-- Step 1 -->
-            <div class="step-card">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <h3>Fill Out the Generation Form</h3>
-                    <p>Start by submitting your parameters and criteria through our designated input form.</p>
-                    <button class="action-btn" onclick="openModal('formModal')">Open Form Link</button>
-                </div>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="step-card">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <h3>Find Your Generated File</h3>
-                    <p>Access the shared drive repository to locate your output file configuration.</p>
-                    <button class="action-btn" onclick="openModal('driveModal')">View Drive Folder</button>
-                </div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="step-card">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <h3>Copy Prompt to AI Agent</h3>
-                    <p>Open your file from the folder, copy the prompt, and take it to your preferred AI agent (Gemini, ChatGPT, Grok, etc.).</p>
-                    <button class="action-btn" onclick="openModal('aiModal')">View AI Tips & Links</button>
-                </div>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="step-card">
-                <div class="step-number">4</div>
-                <div class="step-content">
-                    <h3>Download & Attach the Wrapper</h3>
-                    <p>Download the KTM EduTech Interactive Digital Resource Wrapper HTML file and attach it to your AI agent chat.</p>
-                    <button class="action-btn" onclick="openModal('wrapperModal')">Download Wrapper HTML</button>
-                </div>
-            </div>
-
-            <!-- Step 5 -->
-            <div class="step-card">
-                <div class="step-number">5</div>
-                <div class="step-content">
-                    <h3>Run & Test the Code</h3>
-                    <p>Copy the finished HTML code generated by the AI and run/test it using your preferred web editor or IDE workspace.</p>
-                    <button class="action-btn" onclick="openModal('editorModal')">Choose Code Editor</button>
-                </div>
-            </div>
-
-            <!-- Step 6 -->
-            <div class="step-card">
-                <div class="step-number">6</div>
-                <div class="step-content">
-                    <h3>Publish & Share</h3>
-                    <p>Once you are happy with the preview, host your finished interactive resource online using a web hosting platform.</p>
-                    <button class="action-btn" onclick="openModal('hostingModal')">Choose Hosting Platform</button>
-                </div>
-            </div>
+      <div class="steps-wrapper">
+        <!-- Step 1 -->
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Fill Out the Generation Form</h3>
+            <p>
+              Start by submitting your parameters and criteria through our
+              designated input form.
+            </p>
+            <button class="action-btn" onclick="openModal('formModal')">
+              Open Form Link
+            </button>
+          </div>
         </div>
 
-        <!-- FOOTER BRANDING -->
-        <footer>
-            <img src="https://ik.imagekit.io/ktmedutech/KYDMASONG%20NET/Logo/Signature%20Gold.png?updatedAt=1779969331947" alt="KTM EduTech Signature Gold Logo" class="footer-logo">
-            <p>&copy; 2026 KTM EduTech. All rights reserved.</p>
-        </footer>
+        <!-- Step 2 -->
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Find Your Generated File</h3>
+            <p>
+              Access the shared drive repository to locate your output file
+              configuration.
+            </p>
+            <button class="action-btn" onclick="openModal('driveModal')">
+              View Drive Folder
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Copy Prompt to AI Agent</h3>
+            <p>
+              Open your file from the folder, copy the prompt, and take it to
+              your preferred AI agent (Gemini, ChatGPT, Grok, etc.).
+            </p>
+            <button class="action-btn" onclick="openModal('aiModal')">
+              View AI Tips & Links
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Download & Attach the Wrapper</h3>
+            <p>
+              Download the KTM EduTech Interactive Digital Resource Wrapper HTML
+              file and attach it to your AI agent chat.
+            </p>
+            <button class="action-btn" onclick="openModal('wrapperModal')">
+              Download Wrapper HTML
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step-card">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Run & Test the Code</h3>
+            <p>
+              Copy the finished HTML code generated by the AI and run/test it
+              using your preferred web editor or IDE workspace.
+            </p>
+            <button class="action-btn" onclick="openModal('editorModal')">
+              Choose Code Editor
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="step-card">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h3>Publish & Share</h3>
+            <p>
+              Once you are happy with the preview, host your finished
+              interactive resource online using a web hosting platform.
+            </p>
+            <button class="action-btn" onclick="openModal('hostingModal')">
+              Choose Hosting Platform
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER BRANDING -->
+      <footer>
+        <img
+          src="https://ik.imagekit.io/ktmedutech/KYDMASONG%20NET/Logo/Signature%20Gold.png?updatedAt=1779969331947"
+          alt="KTM EduTech Signature Gold Logo"
+          class="footer-logo"
+        />
+        <p>&copy; 2026 KTM EduTech. All rights reserved.</p>
+      </footer>
     </div>
 
     <!-- MODALS -->
 
     <!-- Modal 1: Form -->
     <div id="formModal" class="modal-overlay">
-        <div class="modal">
-            <h2>Resource Generation Form</h2>
-            <p>You are about to navigate to the Google Form to submit your inputs. Ensure you have your parameters ready.</p>
-            <div class="modal-actions">
-                <button class="btn-secondary" onclick="closeModal('formModal')">Cancel</button>
-                <a href="https://forms.gle/PvjHjQYYwFyb85sr6" target="_blank" class="btn-primary" onclick="closeModal('formModal')">Proceed to Form</a>
-            </div>
+      <div class="modal">
+        <h2>Resource Generation Form</h2>
+        <p>
+          You are about to navigate to the Google Form to submit your inputs.
+          Ensure you have your parameters ready.
+        </p>
+        <div class="modal-actions">
+          <button class="btn-secondary" onclick="closeModal('formModal')">
+            Cancel
+          </button>
+          <a
+            href="https://forms.gle/PvjHjQYYwFyb85sr6"
+            target="_blank"
+            class="btn-primary"
+            onclick="closeModal('formModal')"
+            >Proceed to Form</a
+          >
         </div>
+      </div>
     </div>
 
     <!-- Modal 2: Drive -->
     <div id="driveModal" class="modal-overlay">
-        <div class="modal">
-            <h2>Google Drive Repository</h2>
-            <p>Click below to open the "Resource Prompt for AI Generated" folder where your file outputs are stored.</p>
-            <div class="modal-actions">
-                <button class="btn-secondary" onclick="closeModal('driveModal')">Close</button>
-                <a href="https://drive.google.com/drive/folders/1hXR0Gc99s_Qymd2bAnS0d4wRTof-Zyag?usp=drive_link" target="_blank" class="btn-primary" onclick="closeModal('driveModal')">Open Drive Folder</a>
-            </div>
+      <div class="modal">
+        <h2>Google Drive Repository</h2>
+        <p>
+          Click below to open the "Resource Prompt for AI Generated" folder
+          where your file outputs are stored.
+        </p>
+        <div class="modal-actions">
+          <button class="btn-secondary" onclick="closeModal('driveModal')">
+            Close
+          </button>
+          <a
+            href="https://drive.google.com/drive/folders/1hXR0Gc99s_Qymd2bAnS0d4wRTof-Zyag?usp=drive_link"
+            target="_blank"
+            class="btn-primary"
+            onclick="closeModal('driveModal')"
+            >Open Drive Folder</a
+          >
         </div>
+      </div>
     </div>
 
     <!-- Modal 3: AI Agent -->
     <div id="aiModal" class="modal-overlay">
-        <div class="modal">
-            <h2>Select Your AI Agent</h2>
-            <p>Copy your prompt from the Google Drive file and paste it into your favorite agent below:</p>
-            <div class="link-grid">
-                <a href="https://gemini.google.com" target="_blank" class="btn-secondary">Google Gemini</a>
-                <a href="https://chatgpt.com" target="_blank" class="btn-secondary">ChatGPT</a>
-                <a href="https://grok.com" target="_blank" class="btn-secondary" style="grid-column: span 2;">Grok</a>
-            </div>
-            <div class="modal-actions">
-                <button class="btn-primary" onclick="closeModal('aiModal')">Got It</button>
-            </div>
+      <div class="modal">
+        <h2>Select Your AI Agent</h2>
+        <p>
+          Copy your prompt from the Google Drive file and paste it into your
+          favorite agent below:
+        </p>
+        <div class="link-grid">
+          <a
+            href="https://gemini.google.com"
+            target="_blank"
+            class="btn-secondary"
+            >Google Gemini</a
+          >
+          <a href="https://chatgpt.com" target="_blank" class="btn-secondary"
+            >ChatGPT</a
+          >
+          <a
+            href="https://grok.com"
+            target="_blank"
+            class="btn-secondary"
+            style="grid-column: span 2;"
+            >Grok</a
+          >
         </div>
+        <div class="modal-actions">
+          <button class="btn-primary" onclick="closeModal('aiModal')">
+            Got It
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- Modal 4: Wrapper -->
     <div id="wrapperModal" class="modal-overlay">
-        <div class="modal">
-            <h2>KTM EduTech Wrapper</h2>
-            <p>Download the structural HTML template wrapper document to pass along with your prompt to the AI agent.</p>
-            <div class="modal-actions">
-                <button class="btn-secondary" onclick="closeModal('wrapperModal')">Cancel</button>
-                <a href="https://docs.google.com/document/d/1vUXneQV_fk1IfyEylDU-XvPkYnLTfCWaQEzCtUS8QEs/export?format=html" class="btn-primary" onclick="closeModal('wrapperModal')">Download Wrapper File</a>
-            </div>
+      <div class="modal">
+        <h2>KTM EduTech Wrapper</h2>
+        <p>
+          Download the structural HTML template wrapper document to pass along
+          with your prompt to the AI agent.
+        </p>
+        <div class="modal-actions">
+          <button class="btn-secondary" onclick="closeModal('wrapperModal')">
+            Cancel
+          </button>
+          <a
+            href="https://docs.google.com/document/d/1vUXneQV_fk1IfyEylDU-XvPkYnLTfCWaQEzCtUS8QEs/export?format=html"
+            class="btn-primary"
+            onclick="closeModal('wrapperModal')"
+            >Download Wrapper File</a
+          >
         </div>
+      </div>
     </div>
 
     <!-- Modal 5: Editors -->
     <div id="editorModal" class="modal-overlay">
-        <div class="modal">
-            <h2>Select Code Editor</h2>
-            <p>Choose your preferred development platform or web code editor to run and test your generated code:</p>
-            <div class="link-grid">
-                <a href="https://wcs.ktmedu.dev/" target="_blank" class="btn-secondary">KTM Web Creator Studio</a>
-                <a href="https://vscode.dev/" target="_blank" class="btn-secondary">VS Code Web</a>
-                <a href="https://webmaker.app/create" target="_blank" class="btn-secondary">Webmaker App</a>
-                <a href="https://stackblitz.com/" target="_blank" class="btn-secondary">StackBlitz</a>
-            </div>
-            <div class="modal-actions">
-                <button class="btn-primary" onclick="closeModal('editorModal')">Close</button>
-            </div>
+      <div class="modal">
+        <h2>Select Code Editor</h2>
+        <p>
+          Choose your preferred development platform or web code editor to run
+          and test your generated code:
+        </p>
+        <div class="link-grid">
+          <a
+            href="https://wcs.ktmedu.dev/"
+            target="_blank"
+            class="btn-secondary"
+            >KTM Web Creator Studio</a
+          >
+          <a href="https://vscode.dev/" target="_blank" class="btn-secondary"
+            >VS Code Web</a
+          >
+          <a
+            href="https://webmaker.app/create"
+            target="_blank"
+            class="btn-secondary"
+            >Webmaker App</a
+          >
+          <a
+            href="https://stackblitz.com/"
+            target="_blank"
+            class="btn-secondary"
+            >StackBlitz</a
+          >
         </div>
+        <div class="modal-actions">
+          <button class="btn-primary" onclick="closeModal('editorModal')">
+            Close
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- Modal 6: Hosting -->
     <div id="hostingModal" class="modal-overlay">
-        <div class="modal">
-            <h2>Web Hosting Platforms</h2>
-            <p>Deploy and publish your final interactive resource online by selecting a hosting provider below:</p>
-            <div class="link-grid">
-                <a href="https://github.com/" target="_blank" class="btn-secondary">GitHub</a>
-                <a href="https://www.cloudflare.com/products/pages/" target="_blank" class="btn-secondary">Cloudflare Pages</a>
-                <a href="https://vercel.com/" target="_blank" class="btn-secondary">Vercel</a>
-                <a href="https://www.netlify.com/" target="_blank" class="btn-secondary">Netlify</a>
-            </div>
-            <div class="modal-actions">
-                <button class="btn-primary" onclick="closeModal('hostingModal')">Close</button>
-            </div>
+      <div class="modal">
+        <h2>Web Hosting Platforms</h2>
+        <p>
+          Deploy and publish your final interactive resource online by selecting
+          a hosting provider below:
+        </p>
+        <div class="link-grid">
+          <a href="https://github.com/" target="_blank" class="btn-secondary"
+            >GitHub</a
+          >
+          <a
+            href="https://www.cloudflare.com/products/pages/"
+            target="_blank"
+            class="btn-secondary"
+            >Cloudflare Pages</a
+          >
+          <a href="https://vercel.com/" target="_blank" class="btn-secondary"
+            >Vercel</a
+          >
+          <a
+            href="https://www.netlify.com/"
+            target="_blank"
+            class="btn-secondary"
+            >Netlify</a
+          >
         </div>
+        <div class="modal-actions">
+          <button class="btn-primary" onclick="closeModal('hostingModal')">
+            Close
+          </button>
+        </div>
+      </div>
     </div>
 
     <script>
-        function openModal(modalId) {
-            document.getElementById(modalId).classList.add('active');
-        }
+      function openModal(modalId) {
+          document.getElementById(modalId).classList.add('active');
+      }
 
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.remove('active');
-        }
+      function closeModal(modalId) {
+          document.getElementById(modalId).classList.remove('active');
+      }
 
-        // Close modal if clicking outside the modal box
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal-overlay')) {
-                event.target.classList.remove('active');
-            }
-        }
+      // Close modal if clicking outside the modal box
+      window.onclick = function(event) {
+          if (event.target.classList.contains('modal-overlay')) {
+              event.target.classList.remove('active');
+          }
+      }
     </script>
-</body>
-</html>
-
-
-</body>
+  </body>
 </html>
